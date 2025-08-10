@@ -1,0 +1,250 @@
+<!-- 
+  File Name: enhanced-form.html
+  Assignment: Enhancing HTML5 Content & Mastering Forms
+  Description: 
+    - Demonstrates HTML5 lists, tables, and media.
+    - Implements a complete, accessible HTML5 form with built-in validation.
+    - No JavaScript used for validation — only HTML5 attributes.
+  Author:Ayenew Girmay
+  Date: 10/08/2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Content & Form Example</title>
+    <!-- Basic styling for clarity (not part of assignment focus) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #555;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            padding: 5px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .submit-btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==============================
+         HEADER SECTION
+    =============================== -->
+    <header>
+        <h1>HTML5 Content & Form</h1>
+        <p>This page demonstrates HTML5 lists, tables, media, and form validation without JavaScript.</p>
+    </header>
+
+    <!-- ==============================
+         LISTS SECTION
+         Demonstrating ordered, unordered, and description lists
+    =============================== -->
+    <section>
+        <h2>Our Web Development Topics</h2>
+
+        <!-- Unordered List -->
+        <h3>Core Skills (Unordered List)</h3>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript (Basic)</li>
+        </ul>
+
+        <!-- Ordered List -->
+        <h3>Learning Path (Ordered List)</h3>
+        <ol>
+            <li>Learn HTML</li>
+            <li>Practice CSS</li>
+            <li>Understand JavaScript basics</li>
+        </ol>
+
+        <!-- Description List -->
+        <h3>Key Terms (Description List)</h3>
+        <dl>
+            <dt>HTML</dt>
+            <dd>HyperText Markup Language — structure of the web.</dd>
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets — styling for the web.</dd>
+        </dl>
+    </section>
+
+    <!-- ==============================
+         TABLE SECTION
+         Showing structured data
+    =============================== -->
+    <section>
+        <h2>Course Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Topic</th>
+                    <th>Duration (hrs)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>HTML Basics</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>CSS Styling</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Forms & Validation</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ==============================
+         MEDIA SECTION
+         Embedding image, audio, and video
+    =============================== -->
+    <section>
+        <h2>Media Showcase</h2>
+
+        <!-- Image -->
+        <figure>
+            <img src="https://images.pexels.com/photos/30921592/pexels-photo-30921592.png">
+                <figcaption>Sample project screenshot</figcaption>
+        </figure>
+
+        <!-- Audio -->
+        <h3>Sample Audio</h3>
+        <audio controls>
+            <source src="sample-audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Video -->
+        <h3>Sample Video</h3>
+        <video width="400" controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- ==============================
+         FORM SECTION
+         HTML5 form with native validation
+    =============================== -->
+    <section>
+        <h2>Registration Form</h2>
+        <form action="#" method="post" autocomplete="on">
+            
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="John Doe" required minlength="3">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1234567890" 
+                       pattern="^\+?[0-9]{10,15}$" required>
+            </fieldset>
+
+            <!-- Account Information -->
+            <fieldset>
+                <legend>Account Details</legend>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required minlength="5">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="6">
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required minlength="6">
+            </fieldset>
+
+            <!-- Preferences -->
+            <fieldset>
+                <legend>Preferences</legend>
+
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">--Choose a Course--</option>
+                    <option value="html">HTML Basics</option>
+                    <option value="css">CSS Styling</option>
+                    <option value="forms">Forms & Validation</option>
+                </select>
+
+                <label for="bio">Short Bio:</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..." required></textarea>
+
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the Terms and Conditions
+                </label>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </section>
+
+    <!-- ==============================
+         FOOTER SECTION
+    =============================== -->
+    <footer>
+<h2>Contact Information</h2>
+        <address>
+            Email: <a href="ayenewgirmay21@gmail.com">ayenewgirmay21@gmail.com</a><br>
+            Phone: <a href="tel:0923849518">0923849619</a><br>
+            Address: Gurdshola, Addis Ababa, Ethiopia
+        </address>
+        <p>&copy; 2025 Ayenew Girmay. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
